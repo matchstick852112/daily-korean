@@ -1,0 +1,23 @@
+{
+  "appId": "com.family.korean.daily",
+  "appName": "学韩语",
+  "webDir": "www",
+  "backgroundColor": "#F2F2F7",
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 0
+    },
+    "CapacitorHttp": {
+      "enabled": false
+    },
+    "SystemBars": {
+      "insetsHandling": "native",
+      "initialViewportFitValueHint": "contain",
+      "style": "DEFAULT",
+      "hidden": false
+    }
+  },
+  "android": {
+    "allowMixedContent": false
+  }
+}

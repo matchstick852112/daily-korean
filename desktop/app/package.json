@@ -1,0 +1,9 @@
+{
+  "name": "korean-1a",
+  "productName": "每日韩语",
+  "version": "0.5.6",
+  "description": "首尔大学韩国语 1A–6B + 维他命韩国语 1–6 · Mac 分享版",
+  "author": "学韩语",
+  "main": "main.cjs",
+  "private": true
+}

@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#F6F5F1">
+<title>学韩语</title>
+<!-- 字体：韩文/拉丁/数字 Pretendard，中文 MiSans；均为本地文件 -->
+<link rel="stylesheet" href="fonts/pretendard/pretendardvariable-dynamic-subset.css">
+<link rel="stylesheet" href="fonts/misans/MiSans-Regular.min.css">
+<link rel="stylesheet" href="fonts/misans/MiSans-Semibold.min.css">
+<link rel="stylesheet" href="fonts/misans/MiSans-Bold.min.css">
+<link rel="stylesheet" href="fonts/misans/MiSans-Heavy.min.css">
+<link rel="stylesheet" href="app.css">
+<link rel="stylesheet" href="daily.css">
+</head>
+<body>
+<div class="app" id="app"></div>
+<nav class="tabs" id="tabs"><div class="inner">
+  <button data-tab="home"></button><button data-tab="plan"></button><button data-tab="review"></button><button data-tab="course"></button><button data-tab="talk"></button>
+</div></nav>
+<div id="toast" role="status" aria-live="polite"></div>
+<section id="speech-player" class="speech-player" aria-label="语音播放控制" hidden>
+  <span class="speech-player-icon" id="speech-player-icon"></span>
+  <div class="speech-player-copy"><span id="speech-player-state">正在播放</span><strong id="speech-player-text"></strong></div>
+  <button id="speech-player-toggle" class="speech-player-toggle" aria-label="暂停播放"></button>
+  <button id="speech-player-close" class="speech-player-close" aria-label="关闭播放器"></button>
+</section>
+<script src="vendor/capacitor.js"></script>
+<script src="vendor/ts-fsrs.umd.js"></script>
+<script>const LESSONS = [];</script>
+<script src="content/hangul.js"></script>
+<script src="content/l1.js"></script>
+<script src="content/l2.js"></script>
+<script src="content/l3.js"></script>
+<script src="content/l4.js"></script>
+<script src="content/l5.js"></script>
+<script src="content/l6.js"></script>
+<script src="content/l7.js"></script>
+<script src="content/l8.js"></script>
+<script src="content/l9.js"></script>
+<script src="content/l10.js"></script>
+<script src="content/l11.js"></script>
+<script src="content/l12.js"></script>
+<script src="content/l13.js"></script>
+<script src="content/l14.js"></script>
+<script src="content/l15.js"></script>
+<script src="content/l16.js"></script>
+<script src="content/l17.js"></script>
+<script src="content/l18.js"></script>
+<script src="content/l19.js"></script>
+<script src="content/l20.js"></script>
+<script src="content/l21.js"></script>
+<script src="content/l22.js"></script>
+<script src="content/l23.js"></script>
+<script src="content/l24.js"></script>
+<script src="content/l25.js"></script>
+<script src="content/l26.js"></script>
+<script src="content/l27.js"></script>
+<script src="content/l28.js"></script>
+<script src="content/l29.js"></script>
+<script src="content/l30.js"></script>
+<script src="content/l31.js"></script>
+<script src="content/l32.js"></script>
+<script src="content/l33.js"></script>
+<script src="content/l34.js"></script>
+<script src="content/l35.js"></script>
+<script src="content/l36.js"></script>
+<script src="content/l37.js"></script>
+<script src="content/l38.js"></script>
+<script src="content/l39.js"></script>
+<script src="content/l40.js"></script>
+<script src="content/l41.js"></script>
+<script src="content/l42.js"></script>
+<script src="content/l43.js"></script>
+<script src="content/l44.js"></script>
+<script src="content/l45.js"></script>
+<script src="content/l46.js"></script>
+<script src="content/l47.js"></script>
+<script src="content/l48.js"></script>
+<script src="content/l49.js"></script>
+<script src="content/l50.js"></script>
+<script src="content/l51.js"></script>
+<script src="content/l52.js"></script>
+<script src="content/l53.js"></script>
+<script src="content/l54.js"></script>
+<script src="content/l55.js"></script>
+<script src="content/l56.js"></script>
+<script src="content/l57.js"></script>
+<script src="content/l58.js"></script>
+<script src="content/l59.js"></script>
+<script src="content/l60.js"></script>
+<script src="content/l61.js"></script>
+<script src="content/l62.js"></script>
+<script src="content/l63.js"></script>
+<script src="content/l64.js"></script>
+<script src="content/l65.js"></script>
+<script src="content/l66.js"></script>
+<script src="content/l67.js"></script>
+<script src="content/l68.js"></script>
+<script src="content/l69.js"></script>
+<script src="content/l70.js"></script>
+<script src="content/l71.js"></script>
+<script src="content/l72.js"></script>
+<script src="content/l73.js"></script>
+<script src="content/l74.js"></script>
+<script src="content/l75.js"></script>
+<script src="content/l76.js"></script>
+<script src="content/l77.js"></script>
+<script src="content/l78.js"></script>
+<script src="content/l79.js"></script>
+<script src="content/l80.js"></script>
+<script src="content/l81.js"></script>
+<script src="content/l82.js"></script>
+<script src="content/l83.js"></script>
+<script src="content/l84.js"></script>
+<script src="content/l85.js"></script>
+<script src="content/l86.js"></script>
+<script src="content/l87.js"></script>
+<script src="content/l88.js"></script>
+<script src="content/l89.js"></script>
+<script src="content/l90.js"></script>
+<script src="content/l91.js"></script>
+<script src="content/l92.js"></script>
+<script src="content/l93.js"></script>
+<script src="content/l94.js"></script>
+<script src="content/l95.js"></script>
+<script src="content/l96.js"></script>
+<script src="content/l97.js"></script>
+<script src="content/l98.js"></script>
+<script src="content/l99.js"></script>
+<script src="content/l100.js"></script>
+<script src="content/l101.js"></script>
+<script src="content/l102.js"></script>
+<script src="content/l103.js"></script>
+<script src="content/l104.js"></script>
+<script src="content/l105.js"></script>
+<script src="content/l106.js"></script>
+<script src="content/l107.js"></script>
+<script src="content/l108.js"></script>
+<script src="content/l109.js"></script>
+<script src="content/l110.js"></script>
+<script src="content/l111.js"></script>
+<script src="content/l112.js"></script>
+<script src="content/l113.js"></script>
+<script src="content/l114.js"></script>
+<script src="content/l115.js"></script>
+<script src="content/l116.js"></script>
+<script src="content/l117.js"></script>
+<script src="content/l118.js"></script>
+<script src="content/l119.js"></script>
+<script src="content/l120.js"></script>
+<script src="content/l121.js"></script>
+<script src="content/l122.js"></script>
+<script src="content/l123.js"></script>
+<script src="content/l124.js"></script>
+<script src="content/l125.js"></script>
+<script src="content/l126.js"></script>
+<script src="content/l127.js"></script>
+<script src="content/l128.js"></script>
+<script src="content/l129.js"></script>
+<script src="content/l130.js"></script>
+<script src="content/l131.js"></script>
+<script src="content/l132.js"></script>
+<script src="content/l10016.js"></script>
+<script src="content/l10017.js"></script>
+<script src="content/l10018.js"></script>
+<script src="content/l10019.js"></script>
+<script src="content/l10020.js"></script>
+<script src="content/l10001.js"></script>
+<script src="content/l10002.js"></script>
+<script src="content/l10003.js"></script>
+<script src="content/l10004.js"></script>
+<script src="content/l10005.js"></script>
+<script src="content/l10006.js"></script>
+<script src="content/l10007.js"></script>
+<script src="content/l10008.js"></script>
+<script src="content/l10009.js"></script>
+<script src="content/l10010.js"></script>
+<script src="content/l10011.js"></script>
+<script src="content/l10012.js"></script>
+<script src="content/l10013.js"></script>
+<script src="content/l10014.js"></script>
+<script src="content/l10015.js"></script>
+<script src="content/l11001.js"></script>
+<script src="content/l11002.js"></script>
+<script src="content/l11003.js"></script>
+<script src="content/l11004.js"></script>
+<script src="content/l11005.js"></script>
+<script src="content/l11006.js"></script>
+<script src="content/l11007.js"></script>
+<script src="content/l11008.js"></script>
+<script src="content/l11009.js"></script>
+<script src="content/l11010.js"></script>
+<script src="content/l11011.js"></script>
+<script src="content/l11012.js"></script>
+<script src="content/l11013.js"></script>
+<script src="content/l11014.js"></script>
+<script src="content/l11015.js"></script>
+<script src="content/l11016.js"></script>
+<script src="content/l11017.js"></script>
+<script src="content/l11018.js"></script>
+<script src="content/l11019.js"></script>
+<script src="content/l11020.js"></script>
+<script src="content/l12001.js"></script>
+<script src="content/l12002.js"></script>
+<script src="content/l12003.js"></script>
+<script src="content/l12004.js"></script>
+<script src="content/l12005.js"></script>
+<script src="content/l12006.js"></script>
+<script src="content/l12007.js"></script>
+<script src="content/l12008.js"></script>
+<script src="content/l12009.js"></script>
+<script src="content/l12010.js"></script>
+<script src="content/l12011.js"></script>
+<script src="content/l12012.js"></script>
+<script src="content/l12013.js"></script>
+<script src="content/l12014.js"></script>
+<script src="content/l12015.js"></script>
+<script src="content/l12016.js"></script>
+<script src="content/l12017.js"></script>
+<script src="content/l12018.js"></script>
+<script src="content/l12019.js"></script>
+<script src="content/l12020.js"></script>
+<script src="content/l13001.js"></script>
+<script src="content/l13002.js"></script>
+<script src="content/l13003.js"></script>
+<script src="content/l13004.js"></script>
+<script src="content/l13005.js"></script>
+<script src="content/l13006.js"></script>
+<script src="content/l13007.js"></script>
+<script src="content/l13008.js"></script>
+<script src="content/l13009.js"></script>
+<script src="content/l13010.js"></script>
+<script src="content/l13011.js"></script>
+<script src="content/l13012.js"></script>
+<script src="content/l13013.js"></script>
+<script src="content/l13014.js"></script>
+<script src="content/l13015.js"></script>
+<script src="content/l13016.js"></script>
+<script src="content/l13017.js"></script>
+<script src="content/l13018.js"></script>
+<script src="content/l13019.js"></script>
+<script src="content/l13020.js"></script>
+<script src="content/l15001.js"></script>
+<script src="content/l15002.js"></script>
+<script src="content/l15003.js"></script>
+<script src="content/l15004.js"></script>
+<script src="content/l15005.js"></script>
+<script src="content/l15006.js"></script>
+<script src="content/l15007.js"></script>
+<script src="content/l15008.js"></script>
+<script src="content/l15009.js"></script>
+<script src="content/l15010.js"></script>
+<script src="content/l15011.js"></script>
+<script src="content/l15012.js"></script>
+<script src="content/l15013.js"></script>
+<script src="content/l15014.js"></script>
+<script src="content/l15015.js"></script>
+<script src="content/l15016.js"></script>
+<script src="content/l15017.js"></script>
+<script src="content/l15018.js"></script>
+<script src="content/l15019.js"></script>
+<script src="content/l15020.js"></script>
+<script src="content/l16001.js"></script>
+<script src="content/l16002.js"></script>
+<script src="content/l16003.js"></script>
+<script src="content/l16004.js"></script>
+<script src="content/l16005.js"></script>
+<script src="content/l16006.js"></script>
+<script src="content/l16007.js"></script>
+<script src="content/l16008.js"></script>
+<script src="content/l16009.js"></script>
+<script src="content/l16010.js"></script>
+<script src="content/l16011.js"></script>
+<script src="content/l16012.js"></script>
+<script src="content/l16013.js"></script>
+<script src="content/l16014.js"></script>
+<script src="content/l16015.js"></script>
+<script src="content/l16016.js"></script>
+<script src="content/l16017.js"></script>
+<script src="content/l16018.js"></script>
+<script src="content/l16019.js"></script>
+<script src="content/l16020.js"></script>
+<script src="tts/manifest.js"></script>
+<script src="app.js"></script>
+<script src="daily.js"></script>
+</body>
+</html>

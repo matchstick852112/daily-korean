@@ -1,0 +1,47 @@
+{
+  "appId": "com.family.korean.daily",
+  "productName": "每日韩语",
+  "copyright": "仅供个人学习",
+  "electronVersion": "41.3.0",
+  "npmRebuild": false,
+  "directories": {
+    "app": "desktop/app",
+    "buildResources": "desktop/build",
+    "output": "releases/mac/${version}"
+  },
+  "files": [
+    "package.json",
+    "main.cjs",
+    "preload.cjs",
+    "korean-private.json",
+    "www/**/*",
+    "!node_modules/**/*"
+  ],
+  "mac": {
+    "target": [
+      {
+        "target": "dmg",
+        "arch": [
+          "arm64"
+        ]
+      }
+    ],
+    "category": "public.app-category.education",
+    "icon": "icon.png",
+    "identity": "-",
+    "hardenedRuntime": false,
+    "darkModeSupport": true,
+    "minimumSystemVersion": "12.0",
+    "extendInfo": {
+      "CFBundleDevelopmentRegion": "zh_CN",
+      "CFBundleLocalizations": [
+        "zh_CN"
+      ],
+      "NSMicrophoneUsageDescription": "跟读时录下你的声音给你自己回放。录音只在当前页面临时保留，不上传、不存档。"
+    }
+  },
+  "dmg": {
+    "title": "每日韩语",
+    "artifactName": "每日韩语-${version}-${arch}.${ext}"
+  }
+}
